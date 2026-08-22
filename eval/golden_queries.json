@@ -1,0 +1,32 @@
+[
+  {
+    "question": "How many customers signed up from India?",
+    "expected_sql": "SELECT COUNT(*) FROM customers WHERE country = 'India';",
+    "category": "simple_filter"
+  },
+  {
+    "question": "How many customers do we have?",
+    "expected_sql": "SELECT COUNT(*) FROM customers;",
+    "category": "simple_lookup"
+  },
+  {
+    "question": "Total revenue per product category",
+    "expected_sql": "SELECT p.category, SUM(oi.quantity * oi.unit_price) FROM order_items oi JOIN products p ON oi.product_id = p.product_id GROUP BY p.category;",
+    "category": "join_aggregation"
+  },
+  {
+    "question": "List all completed orders",
+    "expected_sql": "SELECT * FROM orders WHERE status = 'completed';",
+    "category": "simple_filter"
+  },
+  {
+    "question": "What is our revenue?",
+    "expected_sql": null,
+    "category": "ambiguous"
+  },
+  {
+    "question": "What is the average customer satisfaction rating?",
+    "expected_sql": null,
+    "category": "unanswerable"
+  }
+]

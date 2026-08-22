@@ -37,3 +37,17 @@ text-to-sql-project/
 5. Create the read-only DB user (see guardrails.py comments / build guide Phase 3.3)
 6. `uvicorn app.main:app --reload` → open http://localhost:8000/docs
 7. (Optional) in a second terminal: `streamlit run frontend.py`
+
+
+
+## Git commands
+
+```
+git pull(pull latest code)
+git checkout -b feature/taskA (new branch)
+git checkout branch name(changing branch)
+git add .
+git commit -m "comments"
+git push
+git fetch -p (to refresh branch list)
+```

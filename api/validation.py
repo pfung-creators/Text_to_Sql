@@ -1,5 +1,5 @@
 import re
-from app.llm_client import client, MODEL
+from api.llm_client import client, MODEL
 
 
 def back_translate(sql: str) -> str:
@@ -55,3 +55,4 @@ def compute_confidence(llm_confidence, alignment_score, sanity_flags, multi_quer
     if multi_query_agreement is not None:
         score = score * 0.7 + multi_query_agreement * 0.3
     return max(0.0, min(1.0, round(score, 2)))
+
